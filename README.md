@@ -1,4 +1,4 @@
-# PaiChat-Golang+Ollama LLM应用实践
+# PaiChat-Golang+Ollama LLM应用
 
 <div align="center">  
 
