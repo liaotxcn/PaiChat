@@ -36,13 +36,13 @@ PaiChat/
 
 ---
 
-## 功能特性
-- 支持多种LLM模型对话
-- 提供命令行交互界面
-- 内置Web服务接口
-- 对话历史记录功能
-- 连接池管理LLM实例
-- 完善的配置系统
+## 🌟 功能特性
+- **多模型对话** / Multi-model Chat  
+  `DeepSeek` `llama2` `mistral` `gemma` 等Ollama官方模型支持 
+- **双模交互** / Dual Interface  
+  CLI命令行 + Web图形界面
+- **智能管理** / Smart Management  
+  LLM实例连接池 | 历史记录检索 | 上下文保持 | 完善日志
 
 ---
 
@@ -50,6 +50,27 @@ PaiChat/
 ### 环境要求
 - Go 1.20+
 - Ollama服务(本地或远程)
+- Ollama部署
+```bash
+# Download:  https://ollama.com/download
+# Windows 
+OllamaSetup.exe /DIR=D:\xxx  //修改默认安装目录
+ollama -v     //查看版本
+ollama serve  //启动服务
+ollama list   //本地模型
+ollama pull deepseek-r1   //拉取模型(若中途中断，尝试多次拉取)
+ollama run deepseek-r1    //运行模型
+ollama ps                 //查看运行中模型
+ollama rm model_name      //删除模型
+ollama show model_name    //查看模型详细信息
+ollama stop model_name    //停止运行中模型
+
+# Linux
+# Ollama提供了一键安装脚本,可以快速在Linux系统上安装Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+ollama serve   
+```
+
 ### 启动方式 
 ```bash
 git clone https://github.com/liaotxcn/PaiChat.git  # 克隆仓库
@@ -63,6 +84,7 @@ go run cmd/main.go
 - exit 退出程序
 - clear 清空记录
 - history 查看历史对话
+
 ### Web服务(默认自启动)，访问 https://localhost:8080
 
 ### 研发中，持续更新...
